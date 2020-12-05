@@ -1,0 +1,81 @@
+<div class="customer-order-create-form">
+    <div class="jumbotron">
+  
+  <%= simple_form_for [@customer, @customer_order], url: customer_orders_path,
+    wrapper: :horizontal_form,
+    wrapper_mappings: {
+      boolean:       :horizontal_boolean,
+      check_boxes:   :horizontal_collection,
+      date:          :horizontal_multi_select,
+      datetime:      :horizontal_multi_select,
+      file:          :horizontal_file,
+      radio_buttons: :horizontal_collection,
+      range:         :horizontal_range,
+      time:          :horizontal_multi_select
+    } do |f| %>
+  
+  <div class="customer-order-create-error-notification">
+    <%= f.error_notification %>
+  </div>
+  
+  
+  <div class="customer-order-create-field offset-md-1">
+    
+    <h4> Customer Deatils </h4><br>
+    <div class="row">
+      <%= f.input :email, as: :hidden, input_html: { value: @customer} %>
+      <%= f.input :customer_name, input_html: { value: @customer.try(:customer_full_name) }, wrapper_html: { class: 'col-sm-4' } %>
+      <%= f.input :email, input_html: { value: @customer.try(:email) }, wrapper_html: { class: 'col-sm-4' } %>
+      <%= f.input :mobile_no, input_html: { value: @customer.try(:mobile_no) }, wrapper_html: { class: 'col-sm-4' } %>
+    </div>
+
+    <br><hr><br>
+    <h4> Product & Order Type: </h4><br>
+    <div class="row">
+      <%= f.input :product_id, wrapper_html: { class: 'col-sm-4' }, collection: Product::PRODUCTNAME, prompt: "Select Order Product" %>
+      <%= f.input :order_type, wrapper_html: { class: 'col-sm-4' }, collection: Order::ORDERTYPE, prompt: "Select Order Type"%>
+    </div>
+
+
+    <br><hr><br>
+    <h4> Order deatils & Amount: </h4><br>
+    <div class="row">
+      <%= f.input :unit_of_order,  wrapper_html: { class: 'col-sm-4' }%>
+      <%= f.input :order_product_price, label: "Product Price", wrapper_html: { class: 'col-sm-4' }%>
+      <%= f.input :total_amount, wrapper_html: { class: 'col-sm-4' }%>
+    </div><br>
+    <div class="row">
+      <%= f.input :paid_amount, wrapper_html: { class: 'col-sm-4' } %>
+      <%= f.input :balance_amount, wrapper_html: { class: 'col-sm-5' } %>
+    </div>
+  
+
+    <br><hr><br>
+    <h4> Shpping Deatils: </h4><br>
+
+    <div class="row">
+      <%= f.input :shipped_date, as: :date, html5: true, input_html: { value: Date.today },  wrapper_html: { class: 'col-sm-5' } %>
+      <%= f.input :shipping_address, wrapper_html: { class: 'col-sm-5' } %>
+    </div>
+    <div class="row">
+      <%= f.input :ship_via, wrapper_html: { class: 'col-sm-5' } %>
+      <%= f.input :ship_courier_name, wrapper_html: { class: 'col-sm-5' }%>
+    </div>
+    <div class="row">
+      <%= f.input :note, wrapper_html: { class: 'col-sm-5' } %>
+    </div>
+
+  </div>
+  
+  <br><hr>
+    <div class="form-group row mb-0">
+      <div class="col-sm-9 offset-sm-3">
+        <%= f.button :submit, class: "btn-primary" %>
+        <%= link_to 'Cancel', new_customer_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  </div>
+
+  <%= javascript_pack_tag 'customer-order-new' %>

@@ -1,0 +1,30 @@
+
+<div class="product-create-form">
+    <div class="jumbotron">
+  <%= simple_form_for @product, url: product_path(@product), wrapper: :horizontal_form do |f| %>
+  
+  <div class="product-create-error-notification">
+    <%= f.error_notification %>
+  </div>
+  
+  
+  <div class="product-create-field offset-md-1">
+  
+    <%= f.input :product_name, wrapper_html: { class: 'col-sm-6' } %>
+    <%= f.input :product_unit_price, wrapper_html: { class: 'col-sm-6' } %>
+    <%= f.input :supplier_name, wrapper_html: { class: 'col-sm-6' } %>
+    <%= f.input :unit_in_stock, wrapper_html: { class: 'col-sm-6' } %>
+    <%= f.input :units_of_order, wrapper_html: { class: 'col-sm-6' } %>
+  
+  </div>
+  
+  <br>
+    <div class="form-group row mb-0">
+      <div class="col-sm-9 offset-sm-2">
+        <%= f.button :submit, class: "btn-primary" %>
+        <%= link_to 'Cancel', edit_product_path(@product), class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  </div>

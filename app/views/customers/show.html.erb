@@ -1,0 +1,43 @@
+<div class="customer-detail-show">
+  <div class="jumbotron">
+    <div class="container">
+      <h5>
+        <strong>Customer Name:  </strong>
+        <%= @customer.customer_full_name %>
+      </h5>
+      <h5>
+        <strong>Mobile No:</strong>
+        <%= @customer.mobile_no %>
+      
+      </h5>
+       
+      <h5>
+        <strong>Customer Email:</strong>
+        <%= @customer.email %>
+      </h5>  
+      <h5>
+        <strong>Company Address:</strong>
+        <%= @customer.company_full_address %>
+      </h5>
+       
+      <h5>
+        <strong>Comapany Rdfer By:</strong>
+        <%= @customer.refer_by %>
+      </h5>  
+    
+      <h5>
+        <strong>Comapany Name:</strong>
+        <%= @customer.company_name %>
+      </h5>  
+
+      <br><br>
+      <%= link_to 'Main Customers', customers_path, class: "btn btn-outline-primary" %>  
+
+      <%= link_to 'Edit Customer', edit_customer_path(@customer), class: "btn btn-outline-warning" %>
+
+      <%= link_to 'Destroy', customer_path(@customer), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+
+    
+    </div>
+ </div>
+</div>

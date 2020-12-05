@@ -1,0 +1,38 @@
+<div class="container customer-head-line">
+    <div class="row justify-content-between">
+      <div class="col-auto mr-auto""><h1>Listing Customer</h1></div>
+      <div class="col-auto"><%= link_to 'Add New Customer', new_customer_path, class: "btn btn-success" %></div>
+    </div>
+</div>
+
+
+<div class="table-responsive-sm">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+              <th>Customer Full Name</th>
+              <th>Email</th>
+              <th>Company Name</th>
+              <th>Mobile No</th>
+              <th>City</th> 
+              <th>Customer Details</th>
+              <th>Customer Orders</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @customers.each do |customer| %>
+          <tr scope="row">
+            <td><%= customer.customer_full_name %></td>
+            <td><%= customer.email %></td>
+            <td><%= customer.company_name %></td>
+            <td><%= customer.mobile_no %></td>
+            <td><%= customer.city %></td>
+            <td><%= link_to 'Show', customer %></td>
+            <td><%= link_to 'Orders', customer_orders_path(customer_id: customer.id) %></td>
+          </tr>
+          
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>

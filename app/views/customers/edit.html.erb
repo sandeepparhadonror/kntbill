@@ -1,0 +1,42 @@
+
+<div class="customer-create-form">
+  <div class="jumbotron">
+<%= simple_form_for @customer, url: customer_path(@customer), wrapper: :horizontal_form  do |f| %>
+
+<div class="customer-create-error-notification">
+  <%= f.error_notification %>
+</div>
+
+
+<div class="customer-create-field offset-md-1">
+
+  <div class="row">
+    <%= f.input :first_name, label: 'First Name:'.html_safe, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :middle_name,label_html: { class: 'col-sm-5' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :last_name, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' }%>
+  </div>
+
+  <div class="row">
+    <%= f.input :mobile_no, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :email,label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :company_name, label_html: { class: 'col-sm-5' }, wrapper_html: { class: 'col-sm-3' }%>
+  </div>
+
+  <div class="row">
+    <%= f.input :refer_by, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :city,label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
+    <%= f.input :address, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' }%>
+  </div>
+
+</div>
+
+<br>
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.button :submit, class: "btn-primary" %>
+      <%= link_to 'Cancel', edit_customer_path(@customer), class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>

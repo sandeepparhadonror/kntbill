@@ -1,0 +1,74 @@
+<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+  
+<% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@order.errors.count, "error") %> prohibited
+        this order from being saved:
+      </h2>
+      <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :order_type %><br>
+    <%= form.text_field :order_type %>
+  </p>
+ 
+  <p>
+    <%= form.label :shipped_date %><br>
+    <%= form.text_area :shipped_date %>
+  </p>
+
+  <p>
+    <%= form.label :ship_via %><br>
+    <%= form.text_field :ship_via %>
+  </p>
+ 
+  <p>
+    <%= form.label :ship_courier_name %><br>
+    <%= form.text_field :ship_courier_name %>
+  </p>
+ 
+  <p>
+    <%= form.label :shipping_address %><br>
+    <%= form.text_area :shipping_address %>
+  </p>
+ 
+  <p>
+    <%= form.label :unit_of_order %><br>
+    <%= form.text_area :unit_of_order %>
+  </p>
+ 
+  <p>
+    <%= form.label :total_amount %><br>
+    <%= form.text_area :total_amount %>
+  </p>
+ 
+  <p>
+    <%= form.label :paid_amount %><br>
+    <%= form.text_area :paid_amount %>
+  </p>
+   
+  <p>
+    <%= form.label :balance_amount %><br>
+    <%= form.text_field :balance_amount %>
+  </p>
+
+  <p>
+    <%= form.label :product_id %><br>
+    <%= form.text_field :product_id %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+ 
+<%= link_to 'Back', orders_path %>
