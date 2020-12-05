@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+https://websitesetup.org/bootstrap-tutorial-for-beginners/
+
+Flatpicker : dateDisplay
+https://gorails.com/episodes/webpacker-javascript-in-rails-6

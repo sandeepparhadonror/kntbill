@@ -1,0 +1,47 @@
+<h1> Order List </h1>
+
+
+<h1>Listing Order</h1>
+ 
+<div class="able-responsive-sm">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+              <th>Order Type</th>
+              <th>Shipped Date</th>
+              <th>Ship Via</th>
+              <th>Shipping courier Name</th>
+              <th>Ship Address</th> 
+              <th>Toatl order</th>
+              <th>Total Amount</th>
+              <th>Paid Amount</th>
+              <th>balance_amount</th>
+              <th>Product Name</th>
+              <th>Order Details Info</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr scope="row">
+            <td><%= order.order_type %></td>
+            <td><%= order.shipped_date %></td>
+            <td><%= order.ship_via %></td>
+            <td><%= order.ship_courier_name %></td>
+            <td><%= order.shipping_address %></td>
+            <td><%= order.unit_of_order %></td>
+            <td><%= order.total_amount %></td>
+            <td><%= order.paid_amount %></td>
+            <td><%= order.balance_amount %></td>
+            <td><%= order.product_id %></td>
+            <td><%= link_to 'Order Deatil Show', order_path(order) %>  </td>
+            </tr>
+          
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+
+<br />
+ 
+<%= link_to 'Add New Order', new_order_path %>  
+

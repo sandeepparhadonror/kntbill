@@ -1,0 +1,57 @@
+<p>
+    <strong>Order Type:</strong>
+    <%= @order.order_type %>
+  </p>
+
+  <p>
+    <strong>shipped_date:</strong>
+    <%= @order.shipped_date %>
+  </p>
+   
+  <p>
+    <strong>ship_via:</strong>
+    <%= @order.ship_via %>
+  </p>  
+  <p>
+    <strong>ship_courier_name:</strong>
+    <%= @order.ship_courier_name %>
+  </p>
+   
+  <p>
+    <strong>shipping_address</strong>
+    <%= @order.shipping_address %>
+  </p>  
+
+  <p>
+    <strong>unit_of_order:</strong>
+    <%= @order.unit_of_order %>
+  </p>
+   
+  <p>
+    <strong>total_amount</strong>
+    <%= @order.total_amount %>
+  </p>  
+
+  <p>
+    <strong>balance_amount</strong>
+    <%= @order.balance_amount %>
+  </p>
+   
+  <p>
+    <strong>product_id</strong>
+    <%= @order.product_id %>
+  </p>  
+
+  <br />
+
+ 
+<%= link_to 'Edit order', edit_order_path(@order) %>  
+
+<br />
+
+<%= link_to 'Main orders', orders_path %>  
+
+
+<br />
+
+<%= link_to 'Destroy', order_path(@order), method: :delete, data: { confirm: 'Are you sure?' } %>

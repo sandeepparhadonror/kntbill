@@ -1,0 +1,47 @@
+<div class="container customer-head-line">
+  <div class="row justify-content-between">
+    <div class="col-auto mr-auto""><h1>Listing Customer Orders</h1></div>
+    <div class="col-auto"><%= link_to 'Customer New Order', new_customer_order_path(customer_id: @customer.id), class: "btn btn-success" %></div>
+  </div>
+</div>
+
+ 
+<div class="table-responsive-sm">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+              <th>Order Type</th>
+              <th>Shipped Date</th>
+              <th>Ship Via</th>
+              <th>Shipping courier Name</th>
+              <th>Ship Address</th> 
+              <th>Toatl order</th>
+              <th>Total Amount</th>
+              <th>Paid Amount</th>
+              <th>balance_amount</th>
+              <th>Product Name</th>
+              <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @customer_orders.each do |customer| %>
+          <tr scope="row">
+            <td><%= customer.order_type %></td>
+            <td><%= customer.shipped_date %></td>
+            <td><%= customer.ship_via %></td>
+            <td><%= customer.ship_courier_name %></td>
+            <td><%= customer.shipping_address %></td>
+            <td><%= customer.unit_of_order %></td>
+            <td><%= customer.total_amount %></td>
+            <td><%= customer.paid_amount %></td>
+            <td><%= customer.balance_amount %></td>
+            <td><%= customer.product_id %></td>
+            <td><%= link_to 'Edit order', edit_customer_order_path(customer.id) %>  </td>
+            </tr>
+          
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+
+<br />

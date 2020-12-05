@@ -1,0 +1,38 @@
+<div class="product-detail-show">
+    <div class="jumbotron">
+      <div class="container">
+        <h5>
+          <strong>Products Name:  </strong>
+          <%= @product.product_name %>
+        </h5>
+        <h5>
+          <strong>Products Unit Price:</strong>
+          <%= @product.product_unit_price %>
+        
+        </h5>
+         
+        <h5>
+          <strong>Products Supplier Name:</strong>
+          <%= @product.supplier_name %>
+        </h5>  
+        <h5>
+          <strong>Products total Stock:</strong>
+          <%= @product.unit_in_stock %>
+        </h5>
+         
+        <h5>
+          <strong>Products Order:</strong>
+          <%= @product.units_of_order %>
+        </h5>  
+      
+        <br><br>
+        <%= link_to 'Products page', products_path, class: "btn btn-outline-primary" %>  
+  
+        <%= link_to 'Edit Products', edit_product_path(@product), class: "btn btn-outline-warning" %>
+  
+        <%= link_to 'Destroy', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+  
+      
+      </div>
+   </div>
+  </div>
