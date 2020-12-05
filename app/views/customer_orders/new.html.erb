@@ -71,7 +71,7 @@
     <div class="form-group row mb-0">
       <div class="col-sm-9 offset-sm-3">
         <%= f.button :submit, class: "btn-primary" %>
-        <%= link_to 'Cancel', new_customer_path, class: "btn btn-outline-secondary" %>
+        <%= link_to 'Cancel', customer_orders_path(customer_id: @customer.id), class: "btn btn-outline-secondary" %>
       </div>
     </div>
   <% end %>

@@ -36,7 +36,7 @@
             <td><%= customer.paid_amount %></td>
             <td><%= customer.balance_amount %></td>
             <td><%= customer.product_id %></td>
-            <td><%= link_to 'Edit order', edit_customer_order_path(customer.id) %>  </td>
+            <td class="text-monospace"><%= link_to 'Update order', edit_customer_order_path(customer.id) %>  </td>
             </tr>
           
           <% end %>

@@ -1,6 +1,14 @@
 
 <div class="customer-create-form">
   <div class="jumbotron">
+
+    <div>
+      <h2><p class="text-center">Customer Create form</p></h2>
+    </div>
+    <hr/>
+    <br/>
+   
+    
 <%= simple_form_for @customer, url: customers_path,
   wrapper: :horizontal_form,
   wrapper_mappings: {
@@ -22,30 +30,34 @@
 <div class="customer-create-field offset-md-1">
 
   <div class="row">
-    <%= f.input :first_name, label: 'First Name:'.html_safe, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :middle_name,label_html: { class: 'col-sm-5' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :last_name, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' }%>
+    <%= f.input :first_name, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :middle_name, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :last_name,  wrapper_html: { class: 'col-sm-4' }%>
   </div>
+  <br/>
 
   <div class="row">
-    <%= f.input :mobile_no, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :email,label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :company_name, label_html: { class: 'col-sm-5' }, wrapper_html: { class: 'col-sm-3' }%>
+    <%= f.input :mobile_no, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :email, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :company_name, wrapper_html: { class: 'col-sm-4' }%>
   </div>
+  <br/>
 
   <div class="row">
-    <%= f.input :refer_by, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :city,label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' } %>
-    <%= f.input :address, label_html: { class: 'col-sm-4' }, wrapper_html: { class: 'col-sm-3' }%>
+    <%= f.input :refer_by, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :city, wrapper_html: { class: 'col-sm-4' } %>
+    <%= f.input :address, wrapper_html: { class: 'col-sm-4' }%>
   </div>
+  <br/>
 
 </div>
+<hr/>
 
 <br>
   <div class="form-group row mb-0">
-    <div class="col-sm-9 offset-sm-3">
+    <div class="col-sm-8 offset-sm-5">
       <%= f.button :submit, class: "btn-primary" %>
-      <%= link_to 'Cancel', new_customer_path, class: "btn btn-outline-secondary" %>
+      <%= link_to 'Cancel', customers_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
 <% end %>
