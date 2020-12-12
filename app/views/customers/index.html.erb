@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <% @customers.each do |customer| %>
-        <tr scope="row">
+        <tr scope="row" class="<%= "table-danger" if !customer.customer_active? %>" >
           <td><%= customer.customer_full_name %></td>
           <td><%= customer.email %></td>
           <td><%= customer.company_name %></td>

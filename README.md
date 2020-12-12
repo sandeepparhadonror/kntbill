@@ -28,9 +28,9 @@ https://websitesetup.org/bootstrap-tutorial-for-beginners/
 Flatpicker : dateDisplay
 https://gorails.com/episodes/webpacker-javascript-in-rails-6
 
-#Task : 
+#Task : ord 
 1. Update complete Knt UI
 2. Order show page -> Inprogess -> Complete
-3. boolean active type page display in red -> inprogress
+3. boolean active type page display customer and order in red -> inprogress
 3. Ransack gem use perform the serching
 4. extarct the data on excel and upload over cloud storage

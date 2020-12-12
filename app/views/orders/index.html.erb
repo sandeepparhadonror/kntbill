@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <% @orders.each do |order| %>
-        <tr scope="row">
+        <tr scope="row" class="<%= "table-danger" if !order.order_active? %>" >
           <td><%= order.order_type %></td>
           <td><%= order.shipped_date %></td>
           <td><%= order.ship_via %></td>
@@ -40,7 +40,7 @@
           <td><%= order.total_amount %></td>
           <td><%= order.paid_amount %></td>
           <td><%= order.balance_amount %></td>
-          <td><%= order.product_id %></td>
+          <td><%= order.product.product_name %></td>
           <td><%= link_to 'Order Deatil Show', order_path(order) %>  </td>
           </tr>
         

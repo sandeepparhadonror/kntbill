@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <% @products.each do |product| %>
-        <tr scope="row">
+        <tr scope="row" class="<%= "table-danger" if !product.product_active? %>" >
           <td><%= product.product_name %></td>
           <td><%= product.product_unit_price %></td>
           <td><%= product.supplier_name %></td>
