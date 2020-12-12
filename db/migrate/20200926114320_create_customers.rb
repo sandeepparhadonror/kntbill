@@ -9,7 +9,8 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string   :refer_by
       t.bigint   :mobile_no, :limit => 8
       t.text     :address
-      t.string   :city 
+      t.string   :city
+      t.boolean  :customer_active, :default => true
       t.timestamps
     end
   end

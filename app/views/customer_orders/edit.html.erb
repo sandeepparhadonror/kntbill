@@ -1,6 +1,12 @@
 <div class="customer-order-create-form">
   <div class="jumbotron">
 
+    <div>
+      <h2><p class="text-center">Customer Order Update form</p></h2>
+    </div>
+    <hr/>
+    <br/>
+
 <%= simple_form_for [@customer, @order], url: customer_order_path(@order),
   wrapper: :horizontal_form,
   wrapper_mappings: {

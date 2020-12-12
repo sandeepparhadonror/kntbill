@@ -1,5 +1,5 @@
 module ApplicationHelper
-    #include Pagy::Frontend
+    include Pagy::Frontend
 
 	def active_class(link_path)
 		request.fullpath == link_path ? "active" : ""

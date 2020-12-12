@@ -29,3 +29,8 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/solid';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import 'bootstrap/scss/bootstrap';
+
+.pagy-style {
+    padding-right: 100px;
+    padding-top: 15px;
+}

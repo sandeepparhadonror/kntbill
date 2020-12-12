@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_052304) do
     t.bigint "mobile_no"
     t.text "address"
     t.string "city"
+    t.boolean "customer_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_052304) do
     t.bigint "balance_amount"
     t.bigint "order_product_price"
     t.string "note"
+    t.boolean "order_active", default: true
     t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_052304) do
     t.string "supplier_name"
     t.bigint "unit_in_stock"
     t.bigint "units_of_order"
+    t.boolean "product_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

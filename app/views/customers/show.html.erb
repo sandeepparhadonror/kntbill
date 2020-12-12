@@ -1,34 +1,48 @@
 <div class="customer-detail-show">
   <div class="jumbotron">
     <div class="container">
-      <h5>
-        <strong>Customer Name:  </strong>
-        <%= @customer.customer_full_name %>
-      </h5>
-      <h5>
-        <strong>Mobile No:</strong>
-        <%= @customer.mobile_no %>
-      
-      </h5>
-       
-      <h5>
-        <strong>Customer Email:</strong>
-        <%= @customer.email %>
-      </h5>  
-      <h5>
-        <strong>Company Address:</strong>
-        <%= @customer.company_full_address %>
-      </h5>
-       
-      <h5>
-        <strong>Comapany Rdfer By:</strong>
-        <%= @customer.refer_by %>
-      </h5>  
-    
-      <h5>
-        <strong>Comapany Name:</strong>
-        <%= @customer.company_name %>
-      </h5>  
+
+      <div>
+        <h1><p class="text-center">Customer Details Info</p></h1>
+      </div>
+      <hr/>
+      <br/>
+          
+  
+          <div class="table-responsive-sm">
+            <table class="table table-hover table-striped table-bordered">
+                  <tr>
+                    <td><h5><strong>Customer Name: </strong></h5></td>
+                    <td><h5><%= @customer.customer_full_name %></h5></td>
+                  </tr>
+  
+                  <tr>
+                    <td><h5><strong>Mobile No:</strong></h5></td>
+                    <td><h5><%= @customer.mobile_no %></h5></td>
+                  </tr>
+  
+                  <tr>
+                    <td><h5><strong>Customer Email:</strong></h5></td>
+                    <td><h5><%= @customer.email %></h5></td>
+                  </tr>
+  
+                  <tr>
+                    <td><h5><strong>Company Address:</strong></h5></td>
+                    <td><h5><%= @customer.company_full_address %></h5></td>
+                  </tr>
+  
+                  <tr>
+                    <td><h5><strong>Comapany Rdfer By</strong></h5></td>
+                    <td><h5><%= @customer.refer_by  %></h5></td>
+                  </tr>
+
+                  <tr>
+                    <td><h5>Comapany Name:</strong></h5></td>
+                    <td><h5><%= @customer.company_name  %></h5></td>
+                  </tr>
+                  
+            </table>
+          </div>
 
       <br><br>
       <%= link_to 'Main Customers', customers_path, class: "btn btn-outline-primary" %>  

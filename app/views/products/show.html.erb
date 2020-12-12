@@ -1,31 +1,47 @@
 <div class="product-detail-show">
     <div class="jumbotron">
       <div class="container">
-        <h5>
-          <strong>Products Name:  </strong>
-          <%= @product.product_name %>
-        </h5>
-        <h5>
-          <strong>Products Unit Price:</strong>
-          <%= @product.product_unit_price %>
+
+
+    <div>
+      <h1><p class="text-center">Products Details</p></h1>
+    </div>
+    <hr/>
+    <br/>
         
-        </h5>
-         
-        <h5>
-          <strong>Products Supplier Name:</strong>
-          <%= @product.supplier_name %>
-        </h5>  
-        <h5>
-          <strong>Products total Stock:</strong>
-          <%= @product.unit_in_stock %>
-        </h5>
-         
-        <h5>
-          <strong>Products Order:</strong>
-          <%= @product.units_of_order %>
-        </h5>  
+
+        <div class="table-responsive-sm">
+          <table class="table table-hover table-striped table-bordered">
+                <tr>
+                  <td><h5><strong>Products Name:</strong></h5></td>
+                  <td><h5><%= @product.product_name %></h5></td>
+                </tr>
+
+                <tr>
+                  <td><h5><strong>Products Unit Price:</strong></h5></td>
+                  <td><h5><%= @product.product_unit_price %></h5></td>
+                </tr>
+
+                <tr>
+                  <td><h5><strong>Products Supplier Name:</strong></h5></td>
+                  <td><h5><%= @product.supplier_name %></h5></td>
+                </tr>
+
+                <tr>
+                  <td><h5><strong>Products total Stock:</strong></h5></td>
+                  <td><h5><%= @product.unit_in_stock %></h5></td>
+                </tr>
+
+                <tr>
+                  <td><h5><strong>Products Order:</strong></h5></td>
+                  <td><h5><%= @product.units_of_order  %></h5></td>
+                </tr>
+                
+          </table>
+        </div>
       
         <br><br>
+        
         <%= link_to 'Products page', products_path, class: "btn btn-outline-primary" %>  
   
         <%= link_to 'Edit Products', edit_product_path(@product), class: "btn btn-outline-warning" %>

@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.all
+    @pagy, @customers = pagy(Customer.all, items: 5)
   end
 
  def show
@@ -36,8 +36,8 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer = Customer.find(params[:id])
-    @customer.destroy
- 
+    @customer.update(customer_active: false)
+    #@customer.destroy
     redirect_to customers_path
   end
 

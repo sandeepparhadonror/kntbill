@@ -2,11 +2,10 @@ class CustomerOrdersController < ApplicationController
 
   def index
     @customer = Customer.find_by(id: params[:customer_id])
-    @customer_orders = @customer.orders
+    @pagy, @customer_orders = pagy(@customer.orders, items: 5)
   end
 
   def show
-    puts "#{params}"
     @cusromer_order = CustomerOrder.find_by(order_id: params[:id])
     customer_id = CustomerOrder.find_by(order_id: params[:id]).try(&:customer_id)
     @customer = Customer.find_by(id: customer_id)
