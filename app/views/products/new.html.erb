@@ -1,6 +1,13 @@
 
 <div class="product-create-form">
     <div class="jumbotron">
+
+      <div>
+        <h1><p class="text-center">Products Create form</p></h1>
+      </div>
+      <hr/>
+      <br/>
+
   <%= simple_form_for @product, url: products_path,
     wrapper: :horizontal_form do |f| %>
   
@@ -25,7 +32,7 @@
     <div class="form-group row mb-0">
       <div class="col-sm-9 offset-sm-2">
         <%= f.button :submit, class: "btn-primary" %>
-        <%= link_to 'Cancel', new_product_path, class: "btn btn-outline-secondary" %>
+        <%= link_to 'Cancel', products_path, class: "btn btn-outline-secondary" %>
       </div>
     </div>
   <% end %>

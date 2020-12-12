@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @pagy, @products = pagy(Product.all, items: 5)
   end
 
   def show
@@ -37,8 +37,8 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
-  
+    @product.update(product_active: false)
+    #@product.destroy
     redirect_to products_path
   end
 

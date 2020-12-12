@@ -1,57 +1,92 @@
-<p>
-    <strong>Order Type:</strong>
-    <%= @order.order_type %>
-  </p>
+<div class="order-detail-show">
+  <div class="jumbotron">
+    <div>
 
-  <p>
-    <strong>shipped_date:</strong>
-    <%= @order.shipped_date %>
-  </p>
-   
-  <p>
-    <strong>ship_via:</strong>
-    <%= @order.ship_via %>
-  </p>  
-  <p>
-    <strong>ship_courier_name:</strong>
-    <%= @order.ship_courier_name %>
-  </p>
-   
-  <p>
-    <strong>shipping_address</strong>
-    <%= @order.shipping_address %>
-  </p>  
 
-  <p>
-    <strong>unit_of_order:</strong>
-    <%= @order.unit_of_order %>
-  </p>
-   
-  <p>
-    <strong>total_amount</strong>
-    <%= @order.total_amount %>
-  </p>  
+  <div>
+    <h1><p class="text-center">Customer Order Details</p></h1>
+  </div>
+  <hr/>
+  <br/>
+      
 
-  <p>
-    <strong>balance_amount</strong>
-    <%= @order.balance_amount %>
-  </p>
-   
-  <p>
-    <strong>product_id</strong>
-    <%= @order.product_id %>
-  </p>  
+      <div class="table-responsive-sm">
+        <table class="table table-hover table-striped table-bordered">
+              
+          <div class="customer-order-show">
+            
+            
+            <div class="container">
+              <h4> Customer Deatils </h4><br>
+              <div class="row">
+                <div class="col-4"><strong>Customer Name :</strong><%= @customer.try(:customer_full_name) %></div>
+                <div class="col-4"><strong>Mobile No : </strong><%= @customer.try(:mobile_no) %></div>
+                <div class="col-4"><strong>Email Address :</strong><%= @customer.try(:email) %></div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-4"><strong> Name : </strong><%= @customer.try(:company_name) %>  </div>
+                <div class="col-4"><strong> Address : </strong><%= @customer.try(:address) %>  </div>
+              </div>
+            </div>
 
-  <br />
+            <br><hr><br>
+            <div class="container">
+              <h4>Product & Order type</h4><br>
+              <div class="row">
+                <div class="col-sm-4"><strong>Product Name :</strong><%= @order.product.product_name %></div>
+                <div class="col-sm-4"><strong>Order Type : </strong><%= @order.order_type %></div>
+                <div class="col-sm-4"><strong>Supplier Name :</strong><%= @order.product.supplier_name %></div>
+              </div>
+            </div>
 
+            <br><hr><br>
+            <div class="container">
+              <h4>Order Details & Amount</h4><br>
+              <div class="row">
+                <div class="col-sm-4"><strong>Unit of Order :</strong><%= @order.unit_of_order %></div>
+                <div class="col-sm-4"><strong>Product price : </strong><%= @order.order_product_price %></div>
+                <div class="col-sm-4"><strong>Total Amount :</strong><%= @order.total_amount %></div>
+              </div><br/>
+              <div class="row">
+                <div class="col-sm-4"><strong>Paid Amount : </strong><%= @order.paid_amount %></div>
+                <div class="col-sm-4"><strong>Balance Amount :</strong><%= @order.balance_amount %></div>
+              </div>
+            </div>
+
+            <br><hr><br>
+            <div class="container">
+              <h4>Shpping Deatils:</h4><br>
+              <div class="row">
+                <div class="col-sm-4"><strong>Shipping Date :</strong><%= @order.shipped_date %></div>
+                <div class="col-sm-4"><strong>Shipping Address : </strong><%= @order.shipping_address %></div>
+                <div class="col-sm-4"><strong>Ship Via:</strong><%= @order.ship_via %></div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-sm-4"><strong>Ship Courier Name : </strong><%= @order.ship_courier_name %></div>
+                <div class="col-sm-4"><strong>Note :</strong><%= @order.note %></div>
+              </div>
+            </div>
+
+          </div>
+          <br><hr><br>
+
+
+          <div class="container text-center">
+            
+              <%= link_to 'Customer Orders', customer_orders_path(customer_id: @customer.id), class: "btn btn-success" %>
+              <%= link_to 'Edit order', edit_customer_order_path(@order.id), class: "btn btn-primary" %>  
+              <%= link_to 'Main orders', orders_path, class: "btn btn-secondary" %>
+              <%= link_to 'Destroy', order_path(@order), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
  
-<%= link_to 'Edit order', edit_order_path(@order) %>  
+              
+        </table>
+      </div>
+    
+    </div>
+ </div>
+</div>
+ 
 
-<br />
-
-<%= link_to 'Main orders', orders_path %>  
-
-
-<br />
-
-<%= link_to 'Destroy', order_path(@order), method: :delete, data: { confirm: 'Are you sure?' } %>
