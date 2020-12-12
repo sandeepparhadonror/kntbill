@@ -1,12 +1,11 @@
 <div class="container customer-head-line">
   <div class="row justify-content-between">
-    <div class="col-auto mr-auto""><h1>Listing Customer Orders</h1></div>
+    <div class="col-auto mr-auto"><h1>Listing Customer Orders</h1></div>
     <div class="col-auto"><%= link_to 'Customer New Order', new_customer_order_path(customer_id: @customer.id), class: "btn btn-success" %></div>
   </div>
 </div>
 
- 
-<div class="table-responsive-sm">
+<div class="table-responsive-sm border border-warning">
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -45,4 +44,81 @@
   </div>
   <%== render partial: 'shared/pagination', locals: {pagy: @pagy} %>
 
-<br />
+<hr/><br />
+
+<div class="customer-order-details border border-success rounded">
+  <div>
+    <div class="row">
+      <div class="col-4">
+        <div class="jumbotron customer-order-info">
+          <h4 class="text-center">Customer Info</h4><hr/><br/>
+          <table class="table table-sm table-hover">
+            <tbody>
+              <tr>
+                <td><p class="text-capitalize">Customer Name :</p></td>
+                <td><p class="text-capitalize text-monospace"><strong class="font-italic"><%= @customer.customer_full_name %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Customer MobNo :</p></td>
+                <td><p class="text-capitalize text-monospace"><strong class="font-italic"><%= @customer.mobile_no %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Company Name :</p></td>
+                <td><p class="text-capitalize text-monospace"><strong class="font-italic"><%= @customer.company_name %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Customer City :</p></td>
+                <td><p class="text-capitalize text-monospace"><strong class="font-italic"><%= @customer.city %></strong></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="jumbotron customer-order-info">
+          <h4 class="text-center">Orders Complate Finance Deatils</h4><hr/><br/>
+          <table class="table table-sm table-hover">
+            <tbody>
+              <tr>
+                <td><p class="text-capitalize">Total Order quntity :</p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.sum(&:unit_of_order) %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Total Paid Amount :</p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.sum(&:paid_amount) %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Total balance Amount : </p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.sum(&:balance_amount) %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">Total order amount :</p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.sum(&:total_amount) %></strong></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="jumbotron customer-order-info">
+          <h4 class="text-center">Order Types Deatils </h4><hr/><br/>
+          <table class="table table-sm table-hover">
+            <tbody>
+              <tr>
+                <td><p class="text-capitalize">Customer Total Order Count :</p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.count %></strong></p></td>
+              </tr>
+              <tr>
+                <td><p class="text-capitalize">order types :</p></td>
+                <td><p class="text-capitalize"><strong class="font-italic"><%= @customer.orders.map(&:order_type).uniq %></strong></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
