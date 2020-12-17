@@ -58,7 +58,7 @@
             <div class="container">
               <h4>Shpping Deatils:</h4><br>
               <div class="row">
-                <div class="col-sm-4"><strong>Shipping Date :</strong><%= @order.shipped_date %></div>
+                <div class="col-sm-4"><strong>Shipping Date :</strong><%= @order.shipped_date.strftime("%m/%d/%Y") %></div>
                 <div class="col-sm-4"><strong>Shipping Address : </strong><%= @order.shipping_address %></div>
                 <div class="col-sm-4"><strong>Ship Via:</strong><%= @order.ship_via %></div>
               </div>

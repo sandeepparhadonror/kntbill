@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find(params[:id])
-    @order.destroy
+    @order.update(order_active: false)
+    #@order.destroy
     redirect_to orders_path
   end
 
