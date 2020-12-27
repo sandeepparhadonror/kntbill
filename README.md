@@ -34,3 +34,5 @@ https://gorails.com/episodes/webpacker-javascript-in-rails-6
 3. boolean active type page display customer and order in red -> inprogress
 3. Ransack gem use perform the serching -> inprogress
 4. extarct the data on excel and upload over cloud storage
+
+knt-bio-billing
