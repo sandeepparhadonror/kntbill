@@ -1,0 +1,22 @@
+
+<div class="field">
+    <%= f.attribute_fields do |a| %>
+      <%= a.attribute_select associations: [:orders] %>
+    <% end %>
+    <%= f.predicate_select %>
+    <%= f.value_fields do |v| %>
+      <%= v.text_field :value %>
+    <% end %>
+    <%= link_to "remove", '#', class: "remove_fields" %>
+  </div>
+
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  <div class="field">
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>

@@ -1,0 +1,55 @@
+<h1>Customer Order search</h1>
+
+<%= search_form_for @q, url: search_customer_orders_reports_path, html: { method: [:get, :post] }  do |f| %>
+
+<%= f.label :first_name_cont, "First Name :" %>
+<%= f.search_field :first_name_cont %>
+
+<%= f.label :last_name_cont, "Last Name :"%>
+<%= f.search_field :last_name_cont %>
+
+<%= f.label :mobile_no_eq, "Mobile No :" %>
+<%= f.search_field :mobile_no_eq %>
+
+<%= f.label :orders_order_type_cont, "Order Type :"%>
+<%= f.search_field :orders_order_type_cont %>
+
+<%= f.label :orders_created_at_gteq, "Order Start Date :"%>
+<%= f.search_field :orders_created_at_gteq %>
+
+<%= f.label :orders_created_at_lteq, "Order End Date :"%>
+<%= f.search_field :orders_created_at_lteq%>
+
+
+<%= f.submit "search" %>
+
+<% end %>
+
+<br><hr>
+
+<h1>Customer Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_orders.each do |customer_order| %>
+      <tr>
+        <td><%= customer_order.first_name %></td>
+        <td><%= customer_order.last_name %></td>
+        <td><%= customer_order.orders.inspect %></td>
+        <td><%= link_to 'Show', customer_order %></td>
+        <td><%= link_to 'Destroy', customer_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+                    

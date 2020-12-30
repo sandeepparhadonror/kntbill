@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'hirb'
 gem 'simple_form'
 gem 'pagy'
+gem 'ransack'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
