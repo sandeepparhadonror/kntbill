@@ -48,11 +48,13 @@
     <div class="row">
       <%= f.input :unit_of_order,  wrapper_html: { class: 'col-sm-4' }%>
       <%= f.input :order_product_price, label: "Product Price", wrapper_html: { class: 'col-sm-4' }%>
-      <%= f.input :total_amount, wrapper_html: { class: 'col-sm-4' }%>
+      <%= f.input :transport_amount, wrapper_html: { class: 'col-sm-4' }%>
     </div><br>
     <div class="row">
       <%= f.input :paid_amount, wrapper_html: { class: 'col-sm-4' } %>
-      <%= f.input :balance_amount, wrapper_html: { class: 'col-sm-5' } %>
+      <%= f.input :balance_amount, wrapper_html: { class: 'col-sm-4' } %>
+      <%= f.input :total_amount, wrapper_html: { class: 'col-sm-4' }%>
+      
     </div>
   
 

@@ -10,6 +10,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.bigint   :total_amount, :limit => 8
       t.bigint   :paid_amount, :limit => 8
       t.bigint   :balance_amount, :limit => 8
+      t.bigint   :transport_amount, :limit => 4
       t.bigint   :order_product_price, :limit => 4
       t.string   :note
       t.boolean  :order_active, :default => true

@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_052304) do
     t.bigint "total_amount"
     t.bigint "paid_amount"
     t.bigint "balance_amount"
+    t.bigint "transport_amount"
     t.bigint "order_product_price"
     t.string "note"
     t.boolean "order_active", default: true
