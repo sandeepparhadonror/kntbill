@@ -20,36 +20,79 @@
 <%= f.label :orders_created_at_end_of_day_lteq, "Order End Date :"%>
 <%= f.search_field :orders_created_at_end_of_day_lteq %>
 
-
 <%= f.submit "search" %>
 
 <% end %>
+<hr class="border border-5">
 
-<br><hr>
+<div class="search-data ">
+  <% @customer_orders.each do |customer| %>
+  
+  <div class="customer-order">
+    
 
-<h1>Customer Orders</h1>
+  <div class="customer-info">
 
-<table>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Order</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row align-items-center">
+      <div class="col">
+        <h5><p class="text-primary"> Customer Deatils and Orders :->  </p></h5>
+      </div>
+      <div class="col">
+        <p class="fw-bold text-success text-capitalize">Name : <%= customer.customer_full_name %> </p>
+      </div>
+      <div class="col">
+        <p class="text-success">Email : <%= customer.email %> </p>
+      </div>
+      <div class="col">
+        <p class="text-danger">Mobile No : <%= customer.mobile_no %> </p>
+      </div>
+      <div class="col">
+        <p class="text-success">Company Name : <%= customer.company_name %> </p>
+      </div>
+    </div>
 
-  <tbody>
-    <% @customer_orders.each do |customer_order| %>
-      <tr>
-        <td><%= customer_order.first_name %></td>
-        <td><%= customer_order.last_name %></td>
-        <td><%= customer_order.orders.inspect %></td>
-        <td><%= link_to 'Show', customer_order %></td>
-        <td><%= link_to 'Destroy', customer_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <div class="customer-orders-details border border-danger">
+
+    <table class="table table-hover table-responsive-sm table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Order Type</th>
+          <th>Shipped Date</th>
+          <th>Order Quntity</th>
+          <th>Total Amount</th>
+          <th>Paid Amount</th>
+          <th>Balance Amount</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% customer.orders.each do |order| %>
+          <tr>
+            <td><%= order.order_type %></td>
+            <td><%= order.shipped_date.strftime("%m/%d/%Y") %></td>
+            <td><%= order.unit_of_order %></td> 
+            <td><%= order.total_amount %></td>
+            <td><%= order.paid_amount %></td>
+            <td><%= order.balance_amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
+
+
+  </div>
+
+  <hr class="border border-5">
+  <% end %>
+ 
+</div>
+
+
+
 
                     
