@@ -12,17 +12,5 @@ class Order < ApplicationRecord
 
   ORDERTYPE = ["Sales", "Purchase"]
 
-  # ransacker :created_at, type: :date do
-  #   Arel.sql('date(created_at)')
-  # end
-
-  # ransacker :updated_at, type: :date do
-  #   Arel.sql("date(updated_at)")
-  # end
-
-  ransacker :created_on, formatter: proc { |value| Date.parse(value).strftime('%Y-%m-%d') } do
-    Arel.sql("DATE(orders.created_at)")
-  end
-
   #Need product price and Note
 end

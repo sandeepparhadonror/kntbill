@@ -3,7 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
 import 'bootstrap'
+require("jquery")
+require("jquery_ujs")
 require("bootstrap");
 require("@rails/ujs").start()
 require("turbolinks").start()
